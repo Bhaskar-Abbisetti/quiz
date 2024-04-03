@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const Student = require('../models/student');
+const Student = require('./student');
 const jwt = require('jsonwebtoken');
 const secretKey='12345678';
-const Quiz = require('../models/quiz')
-const Marks = require('../models/marks')
+const Quiz = require('./quiz')
+const Marks = require('./marks')
 
 const authenticateJWT = (req, res, next) => {
   const token = req.header('token');
