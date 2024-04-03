@@ -23,7 +23,7 @@ const authenticateJWT = (req, res, next) => {
   });
 };
 // Student Login
-app.post('/student/login', async (req, res) => {
+router.post('/login', async (req, res) => {
   try {
     const { studentname, password } = req.body;
     const student = await Student.findOne({ studentname });
@@ -47,7 +47,7 @@ app.post('/student/login', async (req, res) => {
   }
 });
 
-app.post('/student/register', async (req, res) => {
+router.post('/register', async (req, res) => {
   // Assuming you are expecting JSON data in the request body
   const { studentname, password ,role } = req.body;
   try {
@@ -73,7 +73,7 @@ app.post('/student/register', async (req, res) => {
   }
 });
 
-app.get('/student/quizzes', authenticateJWT , async (req, res) => {
+router.get('/quizzes', authenticateJWT , async (req, res) => {
   try {
     const quizzes = await Quiz.find();
     res.json(quizzes);
@@ -99,7 +99,7 @@ router.post('/marks',authenticateJWT, async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
-app.get('/student/mymarks',authenticateJWT,async (req, res) => {
+router.get('/mymarks',authenticateJWT,async (req, res) => {
   try {
     const { id,studentname } = req.user;
     // Use Mongoose to find data based on studentname
