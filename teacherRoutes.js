@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Teacher= require('../models/teacher'); 
-const Quiz =require('../models/quiz')
-const Marks = require('../models/marks')
+const Teacher= require('./teacher'); 
+const Quiz =require('./quiz')
+const Marks = require('./marks')
 const jwt = require('jsonwebtoken');
 const secretKey='12345678';
 
