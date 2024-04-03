@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose= require('mongoose');
 const bodyParser = require('body-parser');
-const teacherRoutes = require('./routes/teacherRoutes');
-const studentRoutes = require('./routes/studentRoutes');
+const teacherRoutes = require('./teacherRoutes');
+const studentRoutes = require('./studentRoutes');
 
 const app = express();
 const PORT = 3030;
